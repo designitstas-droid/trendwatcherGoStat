@@ -1,0 +1,13 @@
+<h1>Главная страница</h1>
+
+<% if logged_in? %>
+  <p>Привет, <%= current_user.email %>!</p>
+
+  <%= button_to "Выйти", sessions_path, method: :delete %>
+<% else %>
+  <p>
+    <%= link_to "Регистрация", new_user_path %> |
+    <%= link_to "Вход", new_sessions_path %>
+  </p>
+<% end %>
+

@@ -1,0 +1,22 @@
+<h1>Вход</h1>
+
+<%= form_with url: sessions_path do |f| %>
+  <div>
+    <%= f.label :email, "Email" %><br>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :password, "Пароль" %><br>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.submit "Войти" %>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <p style="color:red"><%= flash[:alert] %></p>
+<% end %>
+
