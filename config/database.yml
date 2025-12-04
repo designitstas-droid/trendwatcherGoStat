@@ -11,7 +11,10 @@ test:
   adapter: sqlite3
   database: db/test.sqlite3
 
-production:
+production: &production
   adapter: postgresql
   url: <%= ENV['DATABASE_URL'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+cable:
+  <<: *production
